@@ -36,17 +36,19 @@ directory = []
 ## James
 for idx, item in enumerate(results['items']):
     track = item['track']
-    directory.append([idx,track['artists'][0]['name']])
+    #directory.append([idx,track['artists'][0]['name']])
     artistAlbums = sp.artist_albums(track['artists'][0]['id'])
     
     for idx, album in enumerate(artistAlbums['items']):
-        name = album['name']
-        directory.append(name)
+        albumName = album['name']
+        #directory.append(["album ",albumName])
         albumsTracks = sp.album_tracks(album['external_urls']['spotify'])
         
         for idx, track in enumerate(albumsTracks['items']):
-            name = track['name']
-            directory.append(name)
+            trackName = track['name']
+            dir = [track['artists'][0]['name'],'/',albumName,'/',trackName]
+            listToStr = ''.join(map(str, dir))
+            directory.append(listToStr)
 ## Whale
 
 ## Functionality
@@ -64,7 +66,9 @@ for idx, item in enumerate(results['items']):
 ## Functionality
 #----------------------------- Shuffle -----------------------------#
 
+# Algorithm
 
+# Algorithm
 @app.route('/')
 def welcome():
     return render_template('welcome.htm')
@@ -79,7 +83,7 @@ def shuffle():
 
 @app.route('/profile')
 def profile():
-    return render_template('profile.htm', user=user)
+    return render_template('profile.htm', user=user, pic=profile)
 
 @app.route('/playlist')
 def playlist():
