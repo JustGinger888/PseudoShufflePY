@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sidebar 04</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar">
+        <div class="custom-menu">
+          <button
+            type="button"
+            id="sidebarCollapse"
+            class="btn btn-outline-success"
+          >
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Toggle Menu</span>
+          </button>
+        </div>
+        <h1><a href="/" class="logo p-5">
+          <img
+          src="/static/assets/iconInv.png"
+          width="150"
+          height="150"
+          class="d-inline-block align-top"
+          alt=""
+        /></a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="shuffle"
+              ><span class="fa fa-home mr-3"></span>Shuffle</a
+            >
+          </li>
+          
+          <li>
+            <a href="playlist"><span class="fa fa-music mr-3"></span> Playlists</a>
+          </li>
+
+          <li class="">
+            <a href="profile"
+              ><span class="fa fa-user mr-3"></span>Profile</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Shuffle</h2>
+        <p>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Genre" role="tab" aria-controls="home" aria-selected="true">Genre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Decade" role="tab" aria-controls="profile" aria-selected="false">Decade</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#Artist" role="tab" aria-controls="contact" aria-selected="false">Artist</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#Length" role="tab" aria-controls="contact" aria-selected="false">Length</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active pt-5" id="Genre" role="tabpanel" aria-labelledby="home-tab">{{tracks}}</div>
+            <div class="tab-pane fade" id="Decade" role="tabpanel" aria-labelledby="profile-tab">Decade</div>
+            <div class="tab-pane fade" id="Artist" role="tabpanel" aria-labelledby="profile-tab">Artist</div>
+            <div class="tab-pane fade" id="Length" role="tabpanel" aria-labelledby="contact-tab">Length</div>
+          </div>
+        </p>
+      </div>
+    </div>
+
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/popper.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/main.js') }}" ></script>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
