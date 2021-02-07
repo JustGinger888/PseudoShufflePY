@@ -65,67 +65,7 @@
       <!-- Page Content  -->
       <div id="content" class=" p-md-5 pt-5">
         <h2 class="mb-4">Shuffle</h2>
-        <p>
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Genre" role="tab" aria-controls="home" aria-selected="true">Genre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Decade" role="tab" aria-controls="profile" aria-selected="false">Decade</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#Length" role="tab" aria-controls="contact" aria-selected="false">Length</a>
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active pt-5" id="Genre" role="tabpanel" aria-labelledby="home-tab">
-              <form action="">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                  <input type="checkbox" name="options" id="option1" autocomplete="off" checked> Pop
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="checkbox" name="options" id="option2" autocomplete="off"> Rock
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="checkbox" name="options" id="option3" autocomplete="off"> Rap
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="checkbox" name="options" id="option4" autocomplete="off"> Metal
-                </label>
-              </div>
-              <button type="submit" class="btn btn-success">Generate Playlist</button>
-              </form>
-              <p>{{tracks}}</p>
-              
-            </div>
-            <div class="tab-pane fade p-md-5" id="Decade" role="tabpanel" aria-labelledby="profile-tab">
-              <form action="">
-                <div class="row pb-2">
-                  <div class="col-md-6">
-                    <input type="text" placeholder="Start Date" id="startDate" style="width: 100%;">
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" placeholder="End Date" id="endDate" style="width: 100%;">
-                  </div>
-                </div>
-                <button type="submit" id="decadeShuffle" class="btn btn-success">Generate Playlist</button>
-              </form>
-              {{tracks}}
-            </div>
-            <div class="tab-pane fade pt-5" id="Length" role="tabpanel" aria-labelledby="contact-tab">
-              <form action="">
-                <label class="form-label" for="customRange1">Song Length</label>
-                <div class="range">
-                <input type="range" style="width: 100%;" class="form-range " id="customRange1" min="0" max="1000"/>
-                <button type="submit" class="btn btn-success">Generate Playlist</button>
-              </form>
-              {{tracks}}
-              </div>
-            </div>
-          </div>
-        </p>
-      </div>
+        {{tracks}}  
     </div>
 
     <!-- MDB -->

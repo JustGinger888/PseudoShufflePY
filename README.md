@@ -1,5 +1,26 @@
 # pseudo\_shuffle
 
+## Demonstration
+
+``` cmd
+flask run
+```
+
+``` cmd
+Ensure your redirect URI == flask server address + '/callback'
+```
+
+```
+Values are hard coded in atm, so just gotta change them to take data according to site input
+```
+
+``` cmd
+FOR JAMES: directory variable stores the songs in the format you wanted, 
+if you were to input it into the algorithm you're making
+```
+
+## Intro
+
 A shuffle specific to you.
 
 Do you ever get sick of hearing the same songs every time you reshuffle your playlist?

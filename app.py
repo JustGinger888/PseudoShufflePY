@@ -21,10 +21,10 @@ playlists = sp.current_user_playlists(limit=50, offset=0)
 #----------------------------- Shuffle -----------------------------#
 ## Paramaters
 decade_start = '2010-01-01'
-decade_end = '2019-12-12'
+decade_end = '2020-12-12'
 artists = []
 artists_pass = False
-#albums = []
+albums = []
 albums_pass = False
 songs = []
 songs_pass = False
@@ -36,12 +36,27 @@ directory = []
 ## James
 for idx, item in enumerate(results['items']):
     track = item['track']
+
+    if track['artists'][0]['name'] in artists:
+        artists_pass = False
+    else:
+        artists_pass = True
+
+    if track['name'] in songs:
+        songs_pass = False
+    else:
+        songs_pass = True
+
     #directory.append([idx,track['artists'][0]['name']])
     artistAlbums = sp.artist_albums(track['artists'][0]['id'])
     
     for idx, album in enumerate(artistAlbums['items']):
         albumName = album['name']
         #directory.append(["album ",albumName])
+        if albumName in albums:
+            albums_pass = False
+        else:
+            albums_pass = True
         albumsTracks = sp.album_tracks(album['external_urls']['spotify'])
         
         for idx, track in enumerate(albumsTracks['items']):
